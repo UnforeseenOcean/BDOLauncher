@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LauncherWindow));
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.emailLabel = new System.Windows.Forms.Label();
@@ -82,7 +83,7 @@
             this.passwordLabel.TabIndex = 1;
             this.passwordLabel.Text = "Password";
             // 
-            // steamOverlayCheckbox
+            // steamOverlayRadio
             // 
             this.steamOverlayRadio.AutoSize = true;
             this.steamOverlayRadio.BackColor = System.Drawing.Color.Transparent;
@@ -90,7 +91,7 @@
             this.steamOverlayRadio.ForeColor = System.Drawing.Color.White;
             this.steamOverlayRadio.Location = new System.Drawing.Point(472, 260);
             this.steamOverlayRadio.Name = "steamOverlayRadio";
-            this.steamOverlayRadio.Size = new System.Drawing.Size(169, 23);
+            this.steamOverlayRadio.Size = new System.Drawing.Size(168, 23);
             this.steamOverlayRadio.TabIndex = 3;
             this.steamOverlayRadio.Text = "Steam Overlay enabled";
             this.steamOverlayRadio.UseVisualStyleBackColor = false;
@@ -170,10 +171,11 @@
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.emailTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "LauncherWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Unofficial BDO Launcher";
+            this.Text = "Unofficial BDO Launcher v0.1";
             this.ResumeLayout(false);
             this.PerformLayout();
 
