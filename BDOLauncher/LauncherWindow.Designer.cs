@@ -87,14 +87,12 @@
             // 
             this.steamOverlayRadio.AutoSize = true;
             this.steamOverlayRadio.BackColor = System.Drawing.Color.Transparent;
-            this.steamOverlayRadio.Checked = true;
             this.steamOverlayRadio.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.steamOverlayRadio.ForeColor = System.Drawing.Color.White;
             this.steamOverlayRadio.Location = new System.Drawing.Point(472, 260);
             this.steamOverlayRadio.Name = "steamOverlayRadio";
             this.steamOverlayRadio.Size = new System.Drawing.Size(168, 23);
             this.steamOverlayRadio.TabIndex = 3;
-            this.steamOverlayRadio.TabStop = true;
             this.steamOverlayRadio.Text = "Steam Overlay enabled";
             this.steamOverlayRadio.UseVisualStyleBackColor = false;
             this.steamOverlayRadio.CheckedChanged += new System.EventHandler(this.steamOverlayCheckbox_CheckedChanged);
@@ -119,7 +117,7 @@
             this.startButton.Location = new System.Drawing.Point(472, 305);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(100, 37);
-            this.startButton.TabIndex = 4;
+            this.startButton.TabIndex = 3;
             this.startButton.Text = "Start";
             this.startButton.UseVisualStyleBackColor = false;
             this.startButton.Click += new System.EventHandler(this.startButton_Click);
@@ -133,7 +131,7 @@
             this.autoStartCheckbox.Location = new System.Drawing.Point(578, 313);
             this.autoStartCheckbox.Name = "autoStartCheckbox";
             this.autoStartCheckbox.Size = new System.Drawing.Size(86, 23);
-            this.autoStartCheckbox.TabIndex = 5;
+            this.autoStartCheckbox.TabIndex = 4;
             this.autoStartCheckbox.Text = "Autostart";
             this.autoStartCheckbox.UseVisualStyleBackColor = false;
             this.autoStartCheckbox.CheckedChanged += new System.EventHandler(this.autoStartCheckbox_CheckedChanged);
@@ -145,7 +143,7 @@
             this.overlayHelpButton.Location = new System.Drawing.Point(642, 257);
             this.overlayHelpButton.Name = "overlayHelpButton";
             this.overlayHelpButton.Size = new System.Drawing.Size(26, 26);
-            this.overlayHelpButton.TabIndex = 6;
+            this.overlayHelpButton.TabIndex = 5;
             this.overlayHelpButton.Text = "?";
             this.overlayHelpButton.UseVisualStyleBackColor = false;
             this.overlayHelpButton.Click += new System.EventHandler(this.overlayHelpButton_Click);
