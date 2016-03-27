@@ -69,7 +69,12 @@ namespace BDOLauncher
                 var installLocation = (string)Registry.GetValue(
                     "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{C1F96C92-7B8C-485F-A9CD-37A0708A2A60}", "InstallLocation", "");
                 if (string.IsNullOrWhiteSpace(installLocation))
-                    throw new NoNullAllowedException("InstallLocation could not be read from registry");
+                {
+                    installLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles),
+                            "Black Desert Online");
+                    if (!Directory.Exists(installLocation))
+                        throw new FileNotFoundException("Black Desert install location could not be found. (" + installLocation + ")");
+                }
                 _workingDirectory = Path.Combine(installLocation, "bin64");
                 _executablePath = Path.Combine(_workingDirectory, "BlackDesert64.exe");
                 // Check for 32 bit installation
@@ -83,7 +88,7 @@ namespace BDOLauncher
             catch (Exception ex)
             {
                 MessageBox.Show(this,
-                    "Failed to find the Black Desert installation folder, please report this problem in the reddit thread. The Launcher won't work.\n" + ex,
+                    "Failed to find a Black Desert installation, please report this problem in the reddit thread. The Launcher won't work.\n" + ex,
                     "Error");
             }
         }
@@ -207,7 +212,7 @@ namespace BDOLauncher
 
         private void ApiCall(Response response, Action<Result> onSuccess)
         {
-            if (response?.api == null || response.result == null) AuthError(1, "", "");
+            if (response?.api == null || response.result == null) AuthError(0, "", "");
             else switch (response.api.code)
                 {
                     case 100:
@@ -224,9 +229,6 @@ namespace BDOLauncher
 
         private void startButton_Click(object sender, EventArgs e)
         {
-            // Disable start button to prevent double tapping
-            startButton.Enabled = false;
-
             // Disable autostart just in case it's still running
             autoStartTimer.Stop();
             _isAutoStarting = false;
@@ -244,6 +246,8 @@ namespace BDOLauncher
                 MessageBox.Show(this, "Please enter your password.", "Error");
                 return;
             }
+
+            startButton.Enabled = false;
             emailTextBox.Enabled = false;
             passwordTextBox.Enabled = false;
             startButton.Text = "Wait..";

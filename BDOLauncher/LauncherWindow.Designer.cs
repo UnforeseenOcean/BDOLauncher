@@ -87,12 +87,14 @@
             // 
             this.steamOverlayRadio.AutoSize = true;
             this.steamOverlayRadio.BackColor = System.Drawing.Color.Transparent;
+            this.steamOverlayRadio.Checked = true;
             this.steamOverlayRadio.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.steamOverlayRadio.ForeColor = System.Drawing.Color.White;
             this.steamOverlayRadio.Location = new System.Drawing.Point(472, 260);
             this.steamOverlayRadio.Name = "steamOverlayRadio";
             this.steamOverlayRadio.Size = new System.Drawing.Size(168, 23);
             this.steamOverlayRadio.TabIndex = 3;
+            this.steamOverlayRadio.TabStop = true;
             this.steamOverlayRadio.Text = "Steam Overlay enabled";
             this.steamOverlayRadio.UseVisualStyleBackColor = false;
             this.steamOverlayRadio.CheckedChanged += new System.EventHandler(this.steamOverlayCheckbox_CheckedChanged);
